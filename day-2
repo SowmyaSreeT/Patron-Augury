@@ -1,4 +1,4 @@
-
+#day 2   
 from IPython.display import Image
 Image(url='https://s16353.pcdn.co/wp-content/uploads/2018/06/Churn.png')
 # Importing the essential Libraries
@@ -10,3 +10,20 @@ df.head()
 df.shape
 df.columns
 df.dtypes
+df.info
+# Printing Unique Values of the categorical variables
+print(df['Geography'].unique())
+print(df['Gender'].unique())
+print(df['NumOfProducts'].unique())
+print(df['HasCrCard'].unique())
+print(df['IsActiveMember'].unique())
+# Checking if there are null values or not
+df.isnull().sum()
+df.describe()
+df.head()
+# Including only Potential Predictors as independent varibles
+final_dataset = df[['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts', 'HasCrCard', 'IsActiveMember', 'EstimatedSalary', 'Exited']]
+final_dataset.head()
+# Converting the categorical variables into numerical and avoiding Dummy Varibale Trap
+final_dataset = pd.get_dummies(final_dataset, drop_first=True)
+final_dataset.head()
