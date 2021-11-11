@@ -1,1 +1,12 @@
 
+from IPython.display import Image
+Image(url='https://s16353.pcdn.co/wp-content/uploads/2018/06/Churn.png')
+# Importing the essential Libraries
+import pandas as pd
+import numpy as np
+# Reading the Dataset
+df = pd.read_csv(r"C:\Users\user\Desktop\Churn_Modelling.csv")
+df.head()
+df.shape
+df.columns
+df.dtypes
